@@ -1,0 +1,3 @@
+What are generics?
+As we pass parameters to methods we can pass parameter to a class, interface or method as a Type parameter.
+NOTE: Autoboxing is a process of converting primitive data types to it's corresponding object wrapper class.
