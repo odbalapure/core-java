@@ -1,0 +1,25 @@
+Atomic operations
+====================
+1. Reading and writing reference variables is an atomic operation.
+for eg: myObject1 = myObject2
+A thread cannot be interrupted while executing this statement
+
+2. Reading and writing primitive variables except double and long are non atomic operations.
+A thread can be suspended while reading and writing type of these variables.
+for eg: myDouble = 1.22123
+A thread can be suspended while executing this statement
+
+3. Reading and writing to all variables declared as VOLATILE
+
+NOTE: SYSOUT is not an atomic operation
+
+Volatile variables
+====================
+Each thread has a CPU cache that contains copy of the values that are in the main memory. Reading from a cache
+improves performance. Each thread may run on a different CPU and the value of the main memory and the cache may be
+become inconsistent.
+
+When we use non volatile variables, JVM does not guarantee that it will write updated value to MAIN memory.
+JVM will update the main memory as soon as a thread updates the value of a variable in the CPU cache in case of
+VOLATILE variables. But this does not mean we don't need to synchronize access to VOLATILE variables.
+
